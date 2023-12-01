@@ -1,0 +1,5 @@
+*.pth
+.git/
+data/
+test.png
+config/switchbot_config.yaml

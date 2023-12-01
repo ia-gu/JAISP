@@ -1,0 +1,3 @@
+# Please write your camera type 
+# RealSense or CSI
+camera: RealSense

@@ -1,0 +1,9 @@
+# Use in annotationApp
+# Please write button names and folder(class) names
+annotations:
+  - name: 'sakahiro'
+    folder: 'sakahiro'
+  - name: 'itoso'
+    folder: 'itoso'
+  - name: 'shiryu'
+    folder: 'shiryu'

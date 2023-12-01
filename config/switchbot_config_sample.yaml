@@ -1,0 +1,2 @@
+# after put your API key, change the file name to 'switchbot_config_sample.yaml'
+OPEN_TOKEN: 'Please write your switchbot API key'
