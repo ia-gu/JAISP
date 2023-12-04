@@ -2,7 +2,8 @@ import numpy as np
 import cv2
 
 from jetcam.csi_camera import CSICamera
-import pyrealsense2 as rsx
+import pyrealsense2 as rs
+from typing import List, Union
 
 class RealSenseCamera:
     def __init__(self):
@@ -15,12 +16,12 @@ class RealSenseCamera:
         self.pipeline = rs.pipeline()
         self.pipeline.start(self.config)  # Start the camera pipeline
 
-    def get_images(self) -> tuple[np.ndarray, np.ndarray]:
+    def get_images(self) -> List[Union[np.ndarray, np.ndarray]]:
         """
         Captures and retrieves color and depth images from the camera.
 
         Returns:
-            tuple[np.ndarray, np.ndarray]: A tuple containing the color image and the depth image.
+            List[Union[np.ndarray, np.ndarray]]: A list containing the color image and the depth image.
                                            Returns (None, None) if frames are not available.
         """
         # Wait for a coherent pair of frames: depth and color
@@ -58,12 +59,12 @@ class MyCSICamera:
         self.camera = CSICamera(width=width, height=height, capture_fps=30)
         self.camera.running = True  # Start the camera
 
-    def get_images(self) -> tuple[np.ndarray, np.ndarray]:
+    def get_images(self) -> List[Union[np.ndarray, np.ndarray]]:
         """
         Captures a color image from the CSI camera.
 
         Returns:
-            tuple[np.ndarray, np.ndarray]: A tuple containing the color image and a dummy depth image.
+            List[Union[np.ndarray, np.ndarray]]: A list containing the color image and a dummy depth image.
                                            The dummy depth image is a zero array with the same shape as the color image.
                                            Returns (None, None) if no image is captured.
         """
